@@ -66,8 +66,9 @@ class CameraOpenCV(CameraBase):
 
         #get fps
         self.fps = cv.GetCaptureProperty(self._device, cv.CV_CAP_PROP_FPS)
+        Logger.debug("OpenCV camera FPS={0}".format(self.fps))
         if self.fps <= 0:
-            self.fps = 1 / 30.
+            self.fps = 30.
 
         if not self.stopped:
             self.start()
@@ -96,7 +97,7 @@ class CameraOpenCV(CameraBase):
     def start(self):
         super(CameraOpenCV, self).start()
         Clock.unschedule(self._update)
-        Clock.schedule_interval(self._update, self.fps)
+        Clock.schedule_interval(self._update, 1./self.fps)
 
     def stop(self):
         super(CameraOpenCV, self).stop()
