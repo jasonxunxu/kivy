@@ -146,6 +146,7 @@ else:
     #providers += (('gi', 'camera_gi', 'CameraGi'), )
     providers += (('pygst', 'camera_pygst', 'CameraPyGst'), )
 
+providers += (('opencv2', 'camera_opencv2', 'CameraOpenCV2'), )
 providers += (('opencv', 'camera_opencv', 'CameraOpenCV'), )
 
 
