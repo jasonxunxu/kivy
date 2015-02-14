@@ -91,7 +91,7 @@ class CameraBase(EventDispatcher):
         self.init_camera()
 
     def _get_index(self):
-        return self._x
+        return self._index
 
     index = property(lambda self: self._get_index(),
                      lambda self, x: self._set_index(x),
